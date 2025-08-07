@@ -40,7 +40,7 @@ const App = () => {
           headerShown: false,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName: string = '';
-
+            
             switch (route.name) {
               case 'Sale':
                 iconName = focused ? 'cart' : 'cart-outline';
@@ -56,10 +56,12 @@ const App = () => {
                 break;
             }
 
+            console.log(`Rendering icon for route: ${route.name}, iconName: ${iconName}`);
+
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: '#007AFF',
-          tabBarInactiveTintColor: 'gray',
+          tabBarInactiveTintColor: 'black',
         })}
       >
         <Tab.Screen name="Sale" component={SaleScreen} />
